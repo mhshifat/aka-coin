@@ -1,21 +1,17 @@
 import Image from "next/image";
 
-export default function HomeHero() {
+export default function HomeHero({ data }) {
 	return (
 		<div className="homeHero" id="homeHero">
 			<div className="container">
 				<div className="row">
 					<div className="col-md-8 col-sm-12">
 						<h5>
-							Introducing <span>AKA</span>
-							<span>COIN</span>
+							{data?.pre_title} <span>{data?.pre_title_blue}</span>
+							<span>{data?.pre_title_yellow}</span>
 						</h5>
-						<h1>Living Ecosystem Decentralized Token</h1>
-						<p>
-							Akacoin is a open source peer-to-peer digital
-							currency,community-run technology that supports cryptocurrencies
-							and thousands of decentralized applications.
-						</p>
+						<h1>{data?.title}</h1>
+						<p>{data?.description}</p>
 
 						<div className="homeHero__btnGroups">
 							<button>Get Started</button>
