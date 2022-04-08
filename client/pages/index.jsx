@@ -1,7 +1,6 @@
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import ChooseWallet from "../components/home/ChooseWallet";
 import HomeHero from "../components/home/Hero";
 import QuickStart from "../components/home/QuickStart";
@@ -10,34 +9,7 @@ import WhatIs from "../components/home/WhatIs";
 import Footer from "../components/layouts/Footer";
 import Header from "../components/layouts/Header";
 
-const GET_PAGES_URL = process.env.NEXT_PUBLIC_API_URI + "/api/pages";
-const getPages = async () => {
-	const {
-		data: { data },
-	} = await axios({
-		method: "GET",
-		url: GET_PAGES_URL,
-	});
-	return data;
-};
-export default function Home() {
-	const [pages, setPages] = useState(null);
-
-	useEffect(() => {
-		getPages().then((data) => {
-			setPages({
-				...data,
-				wallets: data.wallets.reduce((acc, val, ind, mainArray) => {
-					while (mainArray.length) {
-						acc.push(mainArray.splice(0, 3));
-					}
-					return acc;
-				}, []),
-			});
-		});
-	}, []);
-
-	if (!pages) return null;
+export default function Home({ data }) {
 	return (
 		<div>
 			<Head>
@@ -47,9 +19,9 @@ export default function Home() {
 			</Head>
 
 			<Header />
-			<HomeHero data={pages} />
+			<HomeHero data={data} />
 			<WhatIs />
-			<ChooseWallet data={pages} />
+			<ChooseWallet data={data} />
 			<QuickStart />
 			<Stats />
 			<Footer />
@@ -57,3 +29,26 @@ export default function Home() {
 	);
 }
 
+const GET_PAGES_URL = process.env.NEXT_PUBLIC_API_URI + "/api/pages";
+export async function getServerSideProps(context) {
+	const {
+		data: { data },
+	} = await axios({
+		method: "GET",
+		url: GET_PAGES_URL,
+	});
+
+	return {
+		props: {
+			data: {
+				...data,
+				wallets: data.wallets.reduce((acc, val, ind, mainArray) => {
+					while (mainArray.length) {
+						acc.push(mainArray.splice(0, 3));
+					}
+					return acc;
+				}, []),
+			},
+		},
+	};
+}
