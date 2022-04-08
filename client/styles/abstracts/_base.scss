@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Sen', sans-serif;
+}

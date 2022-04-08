@@ -1,0 +1,98 @@
+.ChooseWallet {
+  padding: 8rem 0;
+
+  & h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: #0E133A;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    
+    @media (max-width: 1089px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__wallet {
+    flex: 1;
+    background-image: url("/images/choose-bg.svg");
+    background-color: rgba(31, 49, 217, 1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    border-radius: 15px;
+    padding: 4.6rem;
+    position: relative;
+    color: #fff !important;
+    
+    &.invert {
+      background-image: url("/images/choose-bg-yellow.svg");
+      background-color: rgba(255, 212, 86, 1);
+      color: #0E133A !important;
+    }
+
+    & > div {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      & > h4 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+        color: inherit;
+      }
+    }
+
+    & > p {
+      margin: 3rem 0;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 28px;
+      color: inherit;
+    }
+
+    & > span {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    & > button {
+      background: #1F33D8;
+      border-radius: 0px 50px 50px 0px;
+      border: none;
+      outline: none;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 16px 40px 16px 20px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+      color: #FFFFFF;
+      gap: 1rem;
+      padding-left: 6rem;
+
+      position: absolute;
+      bottom: 4rem;
+      left: 0;
+
+      &.invert {
+        background: transparent;
+      }
+    }
+  }
+}

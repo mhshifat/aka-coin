@@ -1,0 +1,90 @@
+.QuickStart {
+  padding: 8rem 0;
+
+  & h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: #0E133A;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 10rem;
+
+    &--item > .row > .col-md-4 {
+      width: 160px;
+      height: 160px;
+      background: #FFD456;
+      border-radius: 80px;
+    } 
+
+    &--item > .row > .col-md-8 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 3rem;
+
+      & > h4 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        color: #0E133A;
+      }
+
+      & > p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: #5B5D6D;
+        margin-top: 2rem;
+      }
+    } 
+  }
+
+  .ChooseWallet__list {
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    
+    @media (max-width: 1417px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    @media (max-width: 990px) {
+      grid-template-columns: 1fr;
+    }
+
+    & .ChooseWallet__wallet {
+      height: 480px;
+
+      &:not(:nth-child(2)) button {
+        background: #FFD456;
+        color: #0E133A;
+      }
+
+      & h4 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 62px;
+        color: #FFFFFF;
+      }
+
+      &:nth-child(3) span {
+        min-width: 100% !important;
+
+        & > img {
+          object-fit: cover;
+          border-radius: 9px;
+        }
+      }
+    }
+  }
+}

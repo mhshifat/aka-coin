@@ -1,0 +1,31 @@
+#header {
+  padding-top: 3.4rem;
+  background: #F4F5FA !important;
+
+  & .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+
+    & .dropdown-item,
+    & .nav-link {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 32px;
+      color: #0E133A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & .dropdown-menu[data-bs-popper] {
+      left: unset;
+      right: 0;
+    }
+
+    & .dropdown-item {
+      font-weight: normal;
+    }
+  }
+}
