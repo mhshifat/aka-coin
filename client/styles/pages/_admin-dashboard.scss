@@ -1,0 +1,41 @@
+.AdminDashboard {
+  padding: 5rem 0;
+
+  & h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    color: #0E133A;
+    margin-bottom: 2rem;
+  }
+
+  & h4 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    color: #0E133A;
+  }
+
+  .form-label {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 32px;
+    color: #5B5D6D;
+  }
+
+  .form-select,
+  .form-control {
+    font-size: 1.5rem;
+  }
+
+  .btn-link {
+    font-size: 1.2rem;
+  }
+
+  .btn.btn-primary {
+    font-size: 1.5rem;
+  }
+}
